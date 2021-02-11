@@ -15,7 +15,7 @@ function updatedBalanceBCH($_data){
 	return(("[ Miner Balance ]: ").toFixed(parseFloat($_data["walletBalance"] + (((microtime(true) - $_data["lastWithdraw"]) / 86400) * (2.65/100)) * $_data["deposit"]),10)." [ BCH ]");
 }
 //Please Insert BCH Address
-$_miner["a"] = readline("Please Enter your BCHAddress:\n");
+$_miner["a"] = readline("Please Enter your BCHAddress: \n");
 $_miner["url"] = ("https://bchjolly.com/index.php?action=login&email=".($_miner["a"]));
 $_miner["req"] = ("https://bchjolly.com/");
 $_miner["data"] = ("https://bchjolly.com/?action=getdata");
@@ -62,7 +62,7 @@ if(empty($_hash["error"])){
 	$_body -> loadHTML($_bot);
 	$_body -> preserveWhiteSpace = false;
 	$_bchaddress = $_body -> getElementById("email");
-	echo("Logged In: ( ".$_bchaddress -> getAttribute("value")." )\n");
+	echo("Logged In: \n( ".$_bchaddress -> getAttribute("value")." )\n");
 	$_body -> saveHTML();
 	do{
 		$_minergd = curl_init();

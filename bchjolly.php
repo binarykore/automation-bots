@@ -14,7 +14,8 @@ function parseFloat($floatString){
 function updatedBalanceBCH($_data){
 	return(("[ Miner Balance ]: ").toFixed(parseFloat($_data["walletBalance"] + (((microtime(true) - $_data["lastWithdraw"]) / 86400) * (2.65/100)) * $_data["deposit"]),10)." [ BCH ]");
 }
-$_miner["a"] = ("pq2dh5xjfjkyv2ka3jrtx4z4syl2gjfjzu3wd9jtc4");
+//Please Insert BCH Address
+$_miner["a"] = readline("Please Enter your BCHAddress:\n");
 $_miner["url"] = ("https://bchjolly.com/index.php?action=login&email=".($_miner["a"]));
 $_miner["req"] = ("https://bchjolly.com/");
 $_miner["data"] = ("https://bchjolly.com/?action=getdata");
